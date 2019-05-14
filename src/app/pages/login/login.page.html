@@ -1,0 +1,77 @@
+<ion-header *ngIf="hasClickedLog" color="primary">
+  <ion-toolbar color="primary">
+    <ion-title text-center="">InterRacial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="content1" *ngIf="hasClickedLog">
+    <ion-list middle padding-top="100px">
+
+        <div *ngFor ="let user of userCol | async">
+            {{user | json }}
+        </div>
+
+
+            <!--<img style="margin-left: 10%;" padding src="../../../assets/cloudbubu.png" height="170" />-->
+
+
+        <ion-item>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input type="text"  [(ngModel)]="user.username" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Enter Password</ion-label>
+            <ion-input type="password"  [(ngModel)]="user.password" ></ion-input>
+        </ion-item>
+
+        <ion-button style="margin-top: 40px;margin-bottom: 40px;" color="success" shape="round" expand="full" (click)="loginWithFire()">Login</ion-button>
+        <!--<ion-button style="margin-top: 40px;" color="success" shape="round" expand="full" (click)="signup()">Log In</ion-button>-->
+        <div style="width: 100%;margin-top: 20px;">
+        <a  style="text-align: center; margin-left: 15%; padding-top: 40px;" routerLink="/signup">Sign Up </a> |
+            <a  style="text-align: center;  padding-top: 40px;" href="mailto:interracial@manutech.com?&subject=Password Change%20News&body=">Forgot Password</a>
+
+        </div>
+        <!--<ion-button color="success" expand="full" (click)="sign()">Send OTP</ion-button>-->
+
+
+
+
+    </ion-list>
+    <!--<ion-footer>-->
+        <!--<ion-button expand="full" shape="round"  (click)="login()">Join</ion-button>-->
+    <!--</ion-footer>-->
+  </div>
+    <div *ngIf="other">
+
+        <ion-grid style="margin-top: 50px;">
+            <ion-row>
+                <ion-col>
+                    <div>
+
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+
+                        <img src="../../../assets/load.gif" height="100" width="200"/></div>
+                </ion-col>
+                <ion-col>
+                    <div>
+
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <strong>{{message}}....</strong>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-button *ngIf="back" expand="full" color="light" >Back</ion-button>
+
+
+
+    </div>
+</ion-content>

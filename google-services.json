@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "313575847046",
+    "firebase_url": "https://cloudbaby-ccc26.firebaseio.com",
+    "project_id": "cloudbaby-ccc26",
+    "storage_bucket": "cloudbaby-ccc26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313575847046:android:225fef28fb866489",
+        "android_client_info": {
+          "package_name": "io.militant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313575847046-5ns9kmqdm0lodh8t9c3n94kl7gbgpcgd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApZ1fLqyBM-5Kuzfqlze91aALJ-aMNsFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313575847046-5ns9kmqdm0lodh8t9c3n94kl7gbgpcgd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313575847046:android:663cadd4630a72bc",
+        "android_client_info": {
+          "package_name": "io.militant.cloudbaby"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313575847046-hc4o87fg5amuben6h7qr8u1vsrha0vf3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.militant.cloudbaby",
+            "certificate_hash": "bab8d96474976a126ebc4378b87d1c7057a4ec94"
+          }
+        },
+        {
+          "client_id": "313575847046-5ns9kmqdm0lodh8t9c3n94kl7gbgpcgd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApZ1fLqyBM-5Kuzfqlze91aALJ-aMNsFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313575847046-5ns9kmqdm0lodh8t9c3n94kl7gbgpcgd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

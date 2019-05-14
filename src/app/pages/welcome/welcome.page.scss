@@ -1,0 +1,15 @@
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+
+}
+
+@media only screen and (min-width: 601px) {
+  .content1{
+    margin-left: 40%;
+    margin-right: 35%;
+    background-color: white;
+    color: black;
+    padding: 40px;
+  }
+}

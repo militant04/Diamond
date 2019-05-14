@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title >InterRacial</ion-title>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/readings"></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="secondary">
+          <ion-button  (click)="openFirst()">
+              <ion-icon slot="icon-only" name="menu"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <!--<ion-button expand="full" color="light" (click)="check()">WELCOME BACK</ion-button>-->
+
+
+        <div class="hide-when-big">
+            <ng-container *ngIf="!todos || todos.length == 0">
+                <div *ngFor="let n of [0,1,2]" padding>
+                    <ion-skeleton-text></ion-skeleton-text>
+                    <p>
+                        <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+                    </p>
+                </div>
+            </ng-container>
+        <ion-item  *ngIf="todos">
+
+            <ion-label>Registered for 25 May 2019 </ion-label>
+            <ion-badge slot="end">{{todos.length}}</ion-badge>
+            </ion-item>
+
+
+        <ion-grid  class="hide-grid">
+            <ion-row style="font-size: 13px;"  *ngIf="todos">
+                <ion-col size="1">
+                    <strong>#</strong>
+                </ion-col>
+                <ion-col size="3">
+                    <strong>Username</strong>
+                </ion-col>
+                <ion-col size="2">
+                    <strong>Status</strong>
+                </ion-col>
+                <ion-col size="2">
+                    <strong>Sex</strong>
+                </ion-col>
+                <ion-col size="4">
+                    <strong>Joined</strong>
+                </ion-col>
+            </ion-row>
+
+            <ion-row style="font-size: 13px;" *ngFor="let item of todos;let i = index;">
+                <ion-col size="1">
+                    {{ todos.length -i }}
+                </ion-col>
+                <ion-col size="3">
+                    {{ item.username }}
+                </ion-col>
+                <ion-col size="2">
+                    {{ item.Orientation}}
+                </ion-col>
+                <ion-col size="2">
+                    {{ item.Sex}}
+                </ion-col>
+                <ion-col size="4">
+                    <span style="color: #4d4d4d;font-size: 12px " >  {{ item.createdAt| date:'medium'}}</span>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        </div>
+
+        <div class="hide-when-small">
+            <ng-container *ngIf="!todos || todos.length == 0">
+                <div *ngFor="let n of [0,1,2]" padding>
+                    <ion-skeleton-text></ion-skeleton-text>
+                    <p>
+                        <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+                    </p>
+                </div>
+            </ng-container>
+            <table class="table content1 table-striped">
+                <thead *ngIf="todos" class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Orientation</th>
+                    <th scope="col">Sex</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of todos">
+                    <th scope="row">1</th>
+                    <td>{{ item.username }}</td>
+                    <td>{{ item.Orientation}}</td>
+                    <td>{{ item.Sex}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </ion-list>
+    <!--<ion-fab vertical="bottom" horizontal="end" slot="fixed">-->
+        <!--<ion-fab-button (click)="openFirst()" >-->
+            <!--<ion-icon name="more"></ion-icon>-->
+        <!--</ion-fab-button>-->
+
+    <!--</ion-fab>-->
+
+    <!--<ion-button expand="full" color="secondary" (click)="openFirst()">Join</ion-button>-->
+
+</ion-content>

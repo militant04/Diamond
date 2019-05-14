@@ -1,0 +1,72 @@
+<ion-header>
+
+    <ion-toolbar color="primary">
+        <ion-title>Group Chat</ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content #content  >
+
+    <!--<ng-container *ngIf="!todos || todos.length == 0">-->
+        <!--<div *ngFor="let n of [0,1,2]" padding>-->
+            <!--<ion-skeleton-text></ion-skeleton-text>-->
+            <!--<p>-->
+                <!--<ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>-->
+            <!--</p>-->
+        <!--</div>-->
+    <!--</ng-container>-->
+    <div class="con">
+
+
+
+
+
+
+
+    <div class="speech-wrapper" padding>
+        <div  *ngFor="let item of todos">
+        <div *ngIf="item.user!=currentUser" style="clear:both;" class="bubble">
+            <div class="txt">
+                <p class="name">{{item.user}}</p>
+
+                <p class="message">{{item.message}}</p><br>
+                <span class="timestamp">{{item.createdAt | date:'short'}}</span>
+            </div>
+            <div class="bubble-arrow"></div>
+        </div>
+        <!--  Speech Bubble alternative -->
+
+            <div *ngIf="item.user==currentUser" style="margin-top: 10px; clear:both; margin-bottom: 10px;" class="bubble alt">
+                <div class="txt">
+                    <p class="name alt">+353 87 1234 567<span> {{item.user}}</span></p>
+                    <p class="message">{{item.message}}</p><br>
+                    <span class="timestamp">{{item.createdAt | date:'short'}}</span>
+                </div>
+                <div class="bubble-arrow alt"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="8">
+                    <ion-input type="text"  placeholder="Type your message...." required [(ngModel)]="user.message"></ion-input>
+                </ion-col>
+                <ion-col size="4">
+                    <ion-button (click)="sendMessage()"  >Send</ion-button>
+                </ion-col>
+
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

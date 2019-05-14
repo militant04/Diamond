@@ -1,0 +1,45 @@
+<ion-app>
+
+    <ion-menu contentId="menu-content" side="start" menuId="first">
+
+        <ion-content >
+            <ion-list style="margin-top: 20px;">
+                <div>
+                    <img style="margin-left: 5%;" height="200" padding src="../../../assets/di.png"  />
+                </div>
+                <span *ngIf="username" style="margin-left: 15%; padding-bottom: 40px; font-weight: bold; color: #4d4d4d">{{username}}</span>
+
+                <ion-item style="margin-top: 40px;"  lines="inset" button (click)="event()">
+                    <ion-label>
+                        Next Event
+                        <p></p>
+                    </ion-label>
+                    <ion-icon slot="start"  name="musical-notes" color="primary"></ion-icon>
+                </ion-item>
+                <ion-item lines="inset" button  (click)="payment()">
+                    <ion-label>
+                        Membership Fees
+                        <p></p>
+                    </ion-label>
+                    <ion-icon slot="start"  name="card" color="primary"></ion-icon>
+                </ion-item>
+                <ion-item lines="inset" button (click)="contact()">
+                    <ion-label>
+                        Contact Details
+                        <p></p>
+                    </ion-label>
+                    <ion-icon slot="start"  name="mail" color="primary"></ion-icon>
+                </ion-item>
+                <ion-item lines="inset" (click)="logout()" button >
+                    <ion-label>
+                        Logout
+                        <p></p>
+                    </ion-label>
+                    <ion-icon slot="start"  name="power" color="primary"></ion-icon>
+                </ion-item>
+
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+  <ion-router-outlet  id="menu-content"></ion-router-outlet>
+</ion-app>

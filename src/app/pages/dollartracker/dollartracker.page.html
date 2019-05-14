@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+    <ion-title>Add Expense</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list lines="full">
+        <ion-item>
+            <ion-input required type="text" placeholder="pampers" [(ngModel)]="expense.description"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input required type="text" placeholder="$600" [(ngModel)]="expense.amount"></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-button expand="full" (click)="saveExpense()">Save</ion-button>
+</ion-content>

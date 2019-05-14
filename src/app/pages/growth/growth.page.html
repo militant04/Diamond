@@ -1,0 +1,107 @@
+<ion-header color="primary">
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/cloudhome"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Growth</ion-title>
+    </ion-toolbar>
+    <ion-segment color="primary" [(ngModel)]="activity">
+    <ion-segment-button value="in">
+    Vaccination
+    </ion-segment-button>
+    <ion-segment-button value="out">
+    Booking
+    </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+
+<ion-content padding>
+
+    <div [ngSwitch]="activity">
+        <ion-list *ngSwitchCase="'in'">
+
+            <ion-list>
+
+                <ng-container *ngIf="!todos || todos.length == 0">
+                    <div *ngFor="let n of [0,1,2]" padding>
+                        <ion-skeleton-text></ion-skeleton-text>
+                        <p>
+                            <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+                        </p>
+                    </div>
+                </ng-container>
+                <ion-card>
+                    <ion-item-sliding *ngFor="let item of todos">
+                        <ion-item lines="inset" button [routerLink]="['/details', item.id]">
+                            <ion-label>
+                                {{ item.task }}
+                                <p>{{ item.createdAt | date:'short' }}</p>
+                            </ion-label>
+                            <ion-note slot="end" color="primary">{{ item.priority }}</ion-note>
+                        </ion-item>
+
+                        <ion-item-options side="end">
+                            <ion-item-option (click)="remove(item)" color="secondary">
+                                Remove
+                                <ion-icon name="checkmark" slot="end"></ion-icon>
+                            </ion-item-option>
+                        </ion-item-options>
+                    </ion-item-sliding>
+                </ion-card>
+
+            </ion-list>
+
+            <!--<ion-fab vertical="bottom" horizontal="end" slot="fixed">-->
+                <!--<ion-fab-button color="secondary" routerLink="/details" routerDirection="forward">-->
+                    <!--<ion-icon name="add"></ion-icon>-->
+                <!--</ion-fab-button>-->
+            <!--</ion-fab>-->
+
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'out'">
+            <ion-list>
+                <ion-label>
+                    <h2>Make an Appointment</h2>
+                </ion-label>
+                <ion-item>
+                    <ion-label>Doctor/Medical Center</ion-label>
+                    <ion-select value="--Select--" okText="Okay" cancelText="Dismiss">
+                        <ion-select-option value="brown">Dr. Militant</ion-select-option>
+                        <ion-select-option value="blonde">Dr. Carter</ion-select-option>
+                        <ion-select-option value="black">Dr. Dre</ion-select-option>
+                        <ion-select-option value="red">Red</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-label >Choose Date</ion-label>
+                    <ion-datetime displayFormat="DD MMMM YYYY" min="1989-06-04" max="2019-08-23" value="1994-12-15T13:47:20.789"></ion-datetime>
+                </ion-item>
+
+                <ion-button color="success" expand="full" (click)="checkAvailability()">Check Availability</ion-button>
+
+
+            </ion-list>
+        </ion-list>
+    </div>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button>
+            <ion-icon name="apps"></ion-icon>
+        </ion-fab-button>
+
+        <ion-fab-list side="top">
+            <ion-fab-button color="secondary" routerLink="/details" routerDirection="forward">
+                <ion-icon  name="add"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+
+        <ion-fab-list side="start">
+            <ion-fab-button color="danger" routerLink="/graphs" routerDirection="forward">
+                <ion-icon name="stats"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+
+    </ion-fab>
+
+</ion-content>

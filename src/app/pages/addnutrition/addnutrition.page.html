@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/cloudhome"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Add Nutrition Plan</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list lines="full">
+
+        <h5>Add Nutrition Plan</h5>
+        <ion-item>
+            <ion-label>Day</ion-label>
+            <ion-select value="--Select--" okText="Okay"  [(ngModel)]="mealDay" cancelText="Dismiss">
+                <ion-select-option value="Mon">Monday</ion-select-option>
+                <ion-select-option value="Tue">Tuesday</ion-select-option>
+                <ion-select-option value="Wed">Wednesday</ion-select-option>
+                <ion-select-option value="Thur">Thursday</ion-select-option>
+                <ion-select-option value="Fri">Friday</ion-select-option>
+                <ion-select-option value="Sat">Saturday</ion-select-option>
+                <ion-select-option value="Sun">Sunday</ion-select-option>
+
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Meal Time</ion-label>
+            <ion-select value="--Select--" okText="Okay" [(ngModel)]="mealTime" cancelText="Dismiss">
+                <ion-select-option value="Breakfast">Breakfast</ion-select-option>
+                <ion-select-option value="Mid-morning">Mid-morning</ion-select-option>
+                <ion-select-option value="Lunch">Lunch</ion-select-option>
+                <ion-select-option value="Mid Evening">Mid Evening </ion-select-option>
+                <ion-select-option value="Supper">Supper</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Description</ion-label>
+            <ion-input placeholder="Describe Meal" required type="text"  [(ngModel)]="mealDescription"></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-button expand="full" (click)="saveMeal()">Save</ion-button>
+
+
+
+</ion-content>

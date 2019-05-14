@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+      <ion-buttons slot="secondary">
+          <ion-button  (click)="openFirst()">
+              <ion-icon slot="icon-only" name="menu"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+    <ion-title>Upcoming Event</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding style="background-color: #8aff61" >
+    <ion-button style="margin-left:10px" shape="round" size="full" full color="success" (click)="goToChat()">Enter Group Chat</ion-button>
+
+    <ion-card>
+    <img style="margin-left: 1%;" padding src="../../../assets/event1.jpeg"  />
+
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <div *ngIf="todos  && todos.length>1" style="color: #4d4d4d; margin-left: 20px;margin-top: 8px;  font-weight: bold">Booked:  {{ todos.length }}</div>
+
+                </ion-col>
+                <ion-col>
+                    <ion-button style="margin-left:10px" shape="round" size="small" color="success" (click)="attending()">Show Attending</ion-button>
+
+                </ion-col>
+
+            </ion-row>
+        </ion-grid>
+
+    </ion-card>
+
+        <!--<h3 style="color: #000000;font-weight: bold">Event Payments</h3>-->
+
+        <!--<p >May you please pay for the 25th May party in advance and RSVP your place please.</p>-->
+        <ion-card color="primary">
+            <div style="margin: 20px;">
+
+                <ion-grid style="font-weight: bold;  font-size: 14px;">
+                    <ion-row>
+                        <ion-col>
+                            Account
+                        </ion-col>
+                        <ion-col style=" font-size: 14px;">
+                            Club Poizon
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            Bank
+                        </ion-col>
+                        <ion-col >
+                            Capitec
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            Account No
+                        </ion-col>
+                        <ion-col style="font-size: 14px;">
+                            1616917464
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+            </div>
+        </ion-card>
+
+</ion-content>

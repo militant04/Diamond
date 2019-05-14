@@ -1,0 +1,7 @@
+{
+  "name": "Firestore",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

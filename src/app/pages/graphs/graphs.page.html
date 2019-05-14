@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/cloudhome"></ion-back-button>
+      </ion-buttons>
+    <ion-title>graphs</ion-title>
+
+  </ion-toolbar>
+    <!--<ion-segment [(ngModel)]="activity">-->
+        <!--<ion-segment-button value="height">-->
+            <!--Height-->
+        <!--</ion-segment-button>-->
+        <!--<ion-segment-button value="head">-->
+            <!--Mass-->
+        <!--</ion-segment-button>-->
+    <!--</ion-segment>-->
+</ion-header>
+
+<ion-content padding>
+
+        <ion-list >
+            <ion-card>
+                <ion-card-header>
+                    Height
+                </ion-card-header>
+                <ion-card-content>
+                    <canvas #barCanvas></canvas>
+                </ion-card-content>
+            </ion-card>
+        </ion-list>
+    <h1> {{read}} :mm</h1>
+    <ion-list >
+        <ion-card>
+            <ion-card-header>
+                Weight
+            </ion-card-header>
+            <ion-card-content>
+                <canvas #barWeight></canvas>
+            </ion-card-content>
+        </ion-card>
+    </ion-list>
+    <ion-list >
+        <ion-card>
+            <ion-card-header>
+                Head Circumference
+            </ion-card-header>
+            <ion-card-content>
+                <canvas #barHead></canvas>
+            </ion-card-content>
+        </ion-card>
+    </ion-list>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button routerLink="/readings" routerDirection="forward">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>

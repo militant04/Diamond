@@ -1,0 +1,21 @@
+
+@media only screen and (min-width: 601px) {
+  .content1{
+    width: 80%;
+    margin-left: 10%;
+
+  }
+  .hide-when-big{
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  .hide-when-small{
+    display: none;
+  }
+
+}
+

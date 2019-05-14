@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Create your Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="desktop">
+        <!--<div style="visibility: hidden" class="alert visible alert-primary" role="alert">-->
+            <!--A simple primary alert—check it out!-->
+        <!--</div>-->
+    <ion-list middle padding-top="100px">
+        <ion-item>
+            <ion-label position="floating">User Name *</ion-label>
+            <ion-input type="text"  required [(ngModel)]="user.username"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Password *</ion-label>
+            <ion-input type="text" required  [(ngModel)]="user.Password"></ion-input>
+
+        </ion-item>
+        <p style="margin-left: 3%; color: red; font-weight: bold">Use Username and password to login.</p>
+        <ion-item>
+            <ion-label position="floating">Cell Number</ion-label>
+            <ion-input type="text" mask="(99) 9999-9999"  [(ngModel)]="user.Cell"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Email *</ion-label>
+            <ion-input type="email" required [(ngModel)]="user.email"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-label position="floating">Sex</ion-label>
+            <ion-select [(ngModel)]="user.Sex">
+                <ion-select-option selected value="male">Male</ion-select-option>
+                <ion-select-option value="female">Female</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Orientation *</ion-label>
+            <ion-select  [(ngModel)]="user.Orientation">
+                <ion-select-option selected value="Single">Single.</ion-select-option>
+                <ion-select-option value="Couple">Couple.</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Title</ion-label>
+            <ion-select  [(ngModel)]="user.Title">
+                <ion-select-option value="Mr.">Mr.</ion-select-option>
+                <ion-select-option selected value="Mrs.">Mrs.</ion-select-option>
+                <ion-select-option value="Mr.">Miss.</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">First Name</ion-label>
+            <ion-input type="text" required [(ngModel)]="user.Firstname"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Initial</ion-label>
+            <ion-input type="text"  [(ngModel)]="user.Initial"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Surname</ion-label>
+            <ion-input type="text" required [(ngModel)]="user.Surname"></ion-input>
+        </ion-item>
+
+
+
+        <ion-item>
+            <ion-label position="floating">Town</ion-label>
+            <ion-input type="text" required [(ngModel)]="user.Town"></ion-input>
+        </ion-item>
+
+
+
+
+
+
+
+
+    </ion-list>
+    <ion-footer>
+        <ion-button expand="full" color="secondary" (click)="registerNewUser()">Join</ion-button>
+    </ion-footer>
+
+
+</div>
+</ion-content>
